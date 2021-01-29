@@ -1,9 +1,11 @@
 {{--@foreach(range(1,7) as $index)--}}
 @foreach($tweets as $tweet)
-<div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">
+<div class="rounded-lg borde
+
+r border-gray-300 shadow py-4 px-8 mt-3">
 <div class="flex p-2">
     <div class="flex-shrink-0 mr-2">
-        <img src="https://i.pravatar.cc/50" alt="" class="rounded-full mr-2">
+        <a href="{{route('profile',$tweet->user_id)}}"><img src="{{$tweet->user->url}}" style="height: 50px;width: 50px;" alt="" class="rounded-full mr-2"></a>
     </div>
 
     <div class="">

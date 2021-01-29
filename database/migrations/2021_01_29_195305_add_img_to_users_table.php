@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFriendsTable extends Migration
+class AddImgToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateFriendsTable extends Migration
      */
     public function up()
     {
-        Schema::create('friends', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id');
-            
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+                 $table->string('url')->default("https://fakeimg.pl/300/");
         });
     }
 
@@ -28,6 +25,8 @@ class CreateFriendsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('friends');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }

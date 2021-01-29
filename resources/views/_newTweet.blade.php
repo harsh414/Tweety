@@ -7,7 +7,7 @@
         <hr class="py-2">
 
         <footer class="flex justify-between">
-            <img src="https://i.pravatar.cc/50" alt="" class="rounded-full mr-2">
+            <img src="{{auth()->user()->url}}" alt="" class="rounded-full mr-2" style="height: 50px;width: 50px;">
             <button type="submit" class="bg-blue-400 shadow rounded-lg px-4 py-2 my-1 text-white lg:mr-1">
                 Tweet
             </button>

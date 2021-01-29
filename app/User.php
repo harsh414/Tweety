@@ -29,4 +29,25 @@ class User extends Authenticatable
     {
         return $this->hasMany(Tweet::class);
     }
+
+    public function follow(User $user)
+    {
+        $this->following()->save($user);
+    }
+
+    public function following()
+    {
+        return $this->
+        belongsToMany(User::class,'follows','user_id','following_user_id');
+    }
+
+
+//    public function AllTweets()
+//    {
+//        $user_follows = $this->following
+//                        ->pluck('id');
+//        $user_follows.push($this->id);
+//        return Tweet::whereIn('user_id',$user_follows)->get();
+//    }
+
 }
