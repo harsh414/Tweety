@@ -4,8 +4,8 @@
         @if($user->id != auth()->user()->id)
         <li class="mb-4 ml-2">
             <div class="flex items-center text-sm">
-                <img src="{{$user->url}}" alt="" class="rounded-full ml-1 mx-2" style="height: 40px;width: 40px;">
-                {{$user->name}}
+                <a href="{{route('profile',$user->id)}}"><img src="{{$user->url}}" alt="" class="rounded-full ml-1 mx-2" style="height: 40px;width: 40px;"></a>
+                <a href="{{route('profile',$user->id)}}" style="text-decoration: none;color: black">{{$user->name}}</a>
             </div>
         </li>
         @endif

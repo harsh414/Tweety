@@ -1,44 +1,57 @@
 <ul>
     <li>
-        <a class="font-bold text-lg mb-4 block" id="hoverable"  style="text-decoration: none" href="{{route('tweets')}}">
+        <a class="font-bold text-lg mb-4 block" id="addShadow"   style="text-decoration: none" href="{{route('tweets')}}">
         Home
         </a>
     </li>
     <li>
-        <a class="font-bold text-lg mb-4 block" href="">
+        <a class="font-bold text-lg mb-4 block" id="addShadow" href="" style="text-decoration: none">
             Explore
         </a>
     </li>
     <li>
-        <a class="font-bold text-lg mb-4 block" href="">
+        <a class="font-bold text-lg mb-4 block" id="addShadow" href="" style="text-decoration: none">
             Notifications
         </a>
     </li>
     <li>
-        <a class="font-bold text-lg mb-4 block" href="">
+
+        <a class="font-bold text-lg mb-4 block" id="addShadow" href="" style="text-decoration: none">
             Messages
         </a>
     </li>
-    <li>
-        <a class="font-bold text-lg mb-4 block" href="">
+    <li id="addShadow">
+        <a class="font-bold text-lg mb-4 block" id="addShadow" href="" style="text-decoration: none">
             Bookmarks
         </a>
     </li>
     <li>
-        <a class="font-bold text-lg mb-4 block" href="">
+        <a class="font-bold text-lg mb-4 block" id="addShadow" href="" style="text-decoration: none">
             Lists
         </a>
     </li>
     <li>
-        <a class="font-bold text-lg mb-4 block" href="{{route('profile',auth()->user()->id)}}" style="text-decoration: none">
+        <a class="font-bold text-lg mb-4 block" id="addShadow" href="{{route('profile',auth()->user()->id)}}" style="text-decoration: none">
             Profile
         </a>
     </li>
     <li>
-        <a class="font-bold text-lg mb-4 block" id="hoverable" href="" style="text-decoration: none">
+        <a class="font-bold text-lg mb-4 block" id="addShadow" href="" style="text-decoration: none">
             More
         </a>
     </li>
+    <li>
 
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="">
+                @csrf
+                <button type="submit">
+                    <div class="bg-blue-400 shadow rounded-lg px-4 py-2 my-1 text-white lg:mr-1">
+                        Logout
+                    </div>
+                </button>
+            </form>
+    </li>
+    <br>
 
 </ul>

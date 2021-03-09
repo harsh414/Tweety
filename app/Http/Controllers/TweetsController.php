@@ -12,13 +12,10 @@ class TweetsController extends Controller
 {
     public function index()
     {
+
 //        user tweets as well as tweets associated with the
 //        users the auth user is following
         $tweetIDs= auth()->user()->following()->pluck('id');
-
-
-
-
 
 
 //        <!-- Whom to follow section -->
@@ -33,7 +30,7 @@ class TweetsController extends Controller
 
         $User=$User->whereNotIn('id',$users_id,'and'); //exclude common followers
         $User= $User->where('id','!=',auth()->user()->id);
-        $User=$User->inRandomOrder()->take(5)->get();
+        $User= $User->inRandomOrder()->take(5)->get();
 
 
         $tweets= Tweet::whereIn('user_id',$tweetIDs)
@@ -66,5 +63,23 @@ class TweetsController extends Controller
         );
 
         echo json_encode($data);
+    }
+
+
+    public function likeOrDislike(Request $request)
+    {
+        $tweet_id = $request->get('t_id');
+        $tweet= Tweet::find($tweet_id);
+        if($tweet->ifLikedBy(auth()->user(),$tweet)){
+            $user= auth()->user();
+            $tweet->dislike($user);
+        }else{
+            $user= auth()->user();
+            if($tweet->like(auth()->user())){
+                echo $tweet->num_likes($tweet);
+            }
+            echo $tweet->likes()->count();
+        }
+
     }
 }

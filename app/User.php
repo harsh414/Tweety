@@ -30,9 +30,14 @@ class User extends Authenticatable
         return $this->hasMany(Tweet::class);
     }
 
-    public function follow(User $user)
+    public function follow(User $user)  // used to follow a user
     {
-        $this->following()->save($user);
+        $this->following()->attach($user);
+    }
+
+    public function unfollow(User $user)  // used to unfollow a user
+    {
+        $this->following()->detach($user);
     }
 
     public function following()
@@ -41,13 +46,15 @@ class User extends Authenticatable
         belongsToMany(User::class,'follows','user_id','following_user_id');
     }
 
+    public function isFollowing(User $user)
+    {
+        // !! represents the same as (bool)  typecast to bool
+        return !! $this->following()->where('following_user_id',$user->id)->count();
+    }
 
-//    public function AllTweets()
-//    {
-//        $user_follows = $this->following
-//                        ->pluck('id');
-//        $user_follows.push($this->id);
-//        return Tweet::whereIn('user_id',$user_follows)->get();
-//    }
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 
 }
