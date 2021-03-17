@@ -15,7 +15,7 @@ trait returnable
         $output = '';
         $id = $request->get('id');
 
-        $user = User::where('id', $id)->get()->first();
+        $user = User::find($id);
         $tweets = $user->tweets;
         foreach ($tweets as $tweet) {
             $output .= '
@@ -35,22 +35,31 @@ trait returnable
             </div>
         </div>';
 
-            if ($tweet->ifLikedBy($tweet->user, $tweet)) {
-                $output .= '
-                <div class="flex lg:ml-10 mt-2">
-            <img src="' . asset('images/download.png') . '" style="height: 20px;width: 20px" alt="">
-            &nbsp;
-            ' . $tweet->num_likes($tweet)->count() . '
-                </div>';
+
+        $output.='<div class="lg:ml-7" id="refLikes'.$tweet->id.'">';
+        if($tweet->ifLikedBy(auth()->user(),$tweet)){
+            $id=$tweet->id;
+            $output.='
+        <div class="flex">
+        <span onclick="likeUpdate('.$id.')">
+        <img src="'.asset('images/download.png').'" style="height: 20px;width: 20px" alt="">
+        </span> &nbsp;
+        '.$tweet->num_likes($tweet)->count().'
+        </div>';
             }else{
-                $output .= '
-                <div class="flex lg:ml-10 mt-2">
-            <img src="https://static.thenounproject.com/png/734918-200.png" style="height: 20px;width: 20px" alt="">
-            &nbsp;
-            ' . $tweet->num_likes($tweet)->count() . '
-                </div>';
-            }
-            $output.='</div>';
+                $id=$tweet->id;
+                $output.='
+        <div class="flex">
+        <span onclick="likeUpdate('.$id.')">
+        <img src="https://static.thenounproject.com/png/734918-200.png" style="height: 20px;width: 20px" alt="">
+        </span> &nbsp;
+        '.$tweet->num_likes($tweet)->count().'
+        </div>
+        ';
+        }
+        $output.='</div>';
+
+        $output.='</div>';
         }
         $data = array(
             'table_data' => $output,

@@ -1,6 +1,6 @@
 <ul>
-    <li>
-        <a class="font-bold text-lg mb-4 block" id="addShadow"   style="text-decoration: none" href="{{route('tweets')}}">
+    <li class="">
+        <a class="font-bold text-lg mb-4 block" id="addShadow" style="text-decoration: none" href="{{route('tweets')}}">
         Home
         </a>
     </li>
@@ -55,3 +55,9 @@
     <br>
 
 </ul>
+
+<script type="text/javascript">
+    function color(){
+
+    }
+</script>

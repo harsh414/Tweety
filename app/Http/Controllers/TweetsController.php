@@ -6,6 +6,7 @@ use App\Tweet;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 
 class TweetsController extends Controller
@@ -35,6 +36,7 @@ class TweetsController extends Controller
 
         $tweets= Tweet::whereIn('user_id',$tweetIDs)
             ->orWhere('user_id',auth()->user()->id)->latest()->get();
+
         return view('tweets.index',[
             'tweets'=>$tweets,
             'who_to_follow'=>$User
@@ -46,10 +48,21 @@ class TweetsController extends Controller
     {
         $request->validate([
             'body'=> 'required | max:300 ',
+            'file'=>'max:10000',
     ]);
         $tweet= new Tweet();
         $tweet->user_id= auth()->user()->id;
         $tweet->body=$request->body;
+        if($request->hasFile('upload')){
+            $image = $request->file('upload');
+            $path = $image->store('tweetMedia', 's3');
+            $array = explode('.', $path);
+            $extension = end($array);
+            $url = Storage::disk('s3')->url($path);
+            $tweet->mediaurl= $url;
+            $tweet->mediaformat = $extension;
+        }
+
         $tweet->save();
         return redirect('/tweets');
     }
@@ -68,6 +81,7 @@ class TweetsController extends Controller
 
     public function likeOrDislike(Request $request)
     {
+        $output='';
         $tweet_id = $request->get('t_id');
         $tweet= Tweet::find($tweet_id);
         if($tweet->ifLikedBy(auth()->user(),$tweet)){
@@ -75,11 +89,36 @@ class TweetsController extends Controller
             $tweet->dislike($user);
         }else{
             $user= auth()->user();
-            if($tweet->like(auth()->user())){
-                echo $tweet->num_likes($tweet);
-            }
-            echo $tweet->likes()->count();
+            $tweet->like(auth()->user());
         }
+
+        if($tweet->ifLikedBy(auth()->user(),$tweet)){
+            $id=$tweet->id;
+            $output.='
+        <div class="flex">
+        <span onclick="likeUpdate('.$id.')">
+        <img src="'.asset('images/download.png').'" style="height: 20px;width: 20px" alt="">
+        </span> &nbsp;
+        '.$tweet->num_likes($tweet)->count().'
+        </div>';
+        }else{
+            $id=$tweet->id;
+            $output.='
+        <div class="flex">
+        <span onclick="likeUpdate('.$id.')">
+        <img src="https://static.thenounproject.com/png/734918-200.png" style="height: 20px;width: 20px" alt="">
+        </span> &nbsp;
+        '.$tweet->num_likes($tweet)->count().'
+        </div>
+            ';
+        }
+
+
+        $data = array(
+            'likeData'=>$output,
+        );
+
+        echo json_encode($data);
 
     }
 }

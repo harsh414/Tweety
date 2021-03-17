@@ -33,7 +33,8 @@
         <section class="px-8 py-2 mb-6 mt-2">
             <header class="container mx-auto">
                 <h1>
-                    <img src="{{asset('images/logo.jpg')}}" style="height: 35px;width: 50px" alt="Tweety">
+                    <a href="tweets"><img src="{{asset('images/logo.jpg')}}"
+                                          class="rounded rounded-lg border" style="height: 35px;width: 50px" alt="Tweety"></a>
                 </h1>
             </header>
         </section>
@@ -42,7 +43,8 @@
 
             <main class="container mx-auto">
                 <div class="lg:flex justify-between">
-                    <div class="lg:w-36">
+
+                    <div class="lg:w-48 lg:ml-6 md:ml-3">
                         @if(auth()->user())
                         @include('_sidebar-links')
                         @endif
@@ -55,7 +57,7 @@
                     </div>
 
                     @if(auth()->user())
-                    <div class="lg:w-1/6 bg-gray-100">
+                    <div class="lg:w-1/6 bg-gray-100 lg:mr-8 md:mr-4">
                         @include('_friends-list')
                         @include('_whom-to-follow')
                     </div>

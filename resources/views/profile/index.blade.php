@@ -133,7 +133,7 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
         <div class="modal-content">
 
             <div class="modal-body">
-                <img src="{{$profile->url}}" alt="">
+                <img src="{{$profile->url}}" style="width: 100vw;height: auto" alt="">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -171,3 +171,4 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
 </script>
 
 @endsection
+<script src="{{asset('js/profileLikeDislike.js')}}" type="text/javascript"></script>

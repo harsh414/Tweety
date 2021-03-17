@@ -55,6 +55,7 @@ class ProfileController extends Controller
 //        WHERE isLiked=1;
         $output= '';
         $id= $request->get('id');
+//        $user = User::where('id', $id)->get()->first();
         $query= DB::select("SELECT * FROM
         likes JOIN tweets
         ON likes.user_id=$id AND tweets.id=likes.tweet_id
@@ -85,16 +86,25 @@ class ProfileController extends Controller
                     ' . $tweet->body . '
                 </p>
             </div>
-        </div>
+        </div>';
 
 
-        <div class="flex lg:ml-10 mt-2">
-            <img src="'.asset('images/download.png').'" style="height: 20px;width: 20px" alt="">
+            if ($tweet->ifLikedBy(auth()->user(), $tweet)) {
+                $output .= '
+                <div class="flex lg:ml-10 mt-2">
+            <img src="' . asset('images/download.png') . '" style="height: 20px;width: 20px" alt="">
             &nbsp;
-            '.$tweet->num_likes($tweet)->count().'
-        </div>
-        </div>
-        ';
+            ' . $tweet->num_likes($tweet)->count() . '
+                </div>';
+            }else{
+                $output .= '
+                <div class="flex lg:ml-10 mt-2">
+            <img src="https://static.thenounproject.com/png/734918-200.png" style="height: 20px;width: 20px" alt="">
+            &nbsp;
+            ' . $tweet->num_likes($tweet)->count() . '
+                </div>';
+            }
+            $output.='</div>';
         }
         $data = array(
             'table_data' => $output,

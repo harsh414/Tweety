@@ -1,4 +1,3 @@
-<div id="tweetsContent">
 @foreach($tweets as $tweet)
 <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">
 <div class="flex p-2">
@@ -20,12 +19,26 @@
         </div>
         <p class="text-sm">
             {{$tweet->body}}
+
+            @if($tweet->mediaurl != "")
+            @if($tweet->mediaformat == 'png' || $tweet->mediaformat=='jpg')
+            <div style="width: auto;max-height: 300px;box-shadow: 4px 5px 7px 3px lightgray" class="mt-4 mb-3 lg:ml-6 lg:mr-6">
+                <img src="{{$tweet->mediaurl}}" style="width:100vw; max-height: 300px;" class="rounded"/>
+            </div>
+            @elseif($tweet->mediaformat == 'mp4')
+                <div style="width: auto;max-height: 300px;box-shadow: 4px 5px 7px 3px lightgray;" class="mt-4 mb-3 lg:ml-6 lg:mr-6">
+                    <video style="width:auto; max-height: 300px;border: 4px inset lightgray;" controls>
+                    <source src="{{$tweet->mediaurl}}" type="video/mp4">
+                    </video>
+                </div>
+            @endif
+            @endif
         </p>
     </div>
 </div>
-    <div class="lg:ml-7" >
+    <div class="lg:ml-7" id="refLikes{{$tweet->id}}">
     @if($tweet->ifLikedBy(auth()->user(),$tweet))
-        <div  class="flex">
+        <div class="flex">
         <span onclick="likeUpdate('{{$tweet->id}}')">
         <img src="{{asset('images/download.png')}}" style="height: 20px;width: 20px" alt="">
         </span> &nbsp;
@@ -45,13 +58,12 @@
 {{--        <div class="ml-4"><i class="fa fa-retweet"></i>&nbsp;</div>1--}}
 </div>
 @endforeach
-</div>
 {{--<script type="text/javascript">--}}
 {{--    function --}}
 {{--    alert(id);--}}
 {{--</script>--}}
 
-<script src="{{asset('js/likeDislike.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/feedlikeDislike.js')}}" type="text/javascript"></script>
 
 
 
