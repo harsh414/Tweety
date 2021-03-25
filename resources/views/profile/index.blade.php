@@ -63,7 +63,7 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
 
 <ul class="mt-4 flex justify-between" id="friends">
     <li style="display: none" class="getuser" id="{{$profile->id}}"></li>
-    <li class=""><a style="cursor: pointer" class="tabc" id="tweets_tab" data-toggle="tabajax"> Tweets</a></li>
+    <li class=""><a style="cursor: pointer" class="tabc" id="tweets_tab" data-toggle="tabajax"> Tweets & Retweets</a></li>
     <li class=""><a style="cursor: pointer" class="tabc"  id="media_tab"  data-toggle="tabajax"> Media</a></li>
     <li class=""><a style="cursor: pointer" class="tabc" id="likes_tab"  data-toggle="tabajax">Likes</a></li>
 </ul>
@@ -73,7 +73,6 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
 <div class="mt-4" id="content">
 
 </div>
-
 
 
 <!-- Modal -->
@@ -115,7 +114,7 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
             </div>
              <div>
                  <h3 class="text-sm lg:ml-1">Birth date</h3>
-                 <input type="text" style="outline: none" id="datepicker" name="dob" class="border border-gray-500 pl-2 text-sm">
+                 <input type="" style="outline: none" id="datepicker" name="dob" class="border border-gray-500 pl-2 text-sm">
              </div>
             </div>
             <div class="modal-footer">
@@ -141,7 +140,11 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
         </div>
     </div>
 </div>
-<script src="{{asset('js/profilescript.js')}}"></script>
+
+
+@section('scripts')
+<script src="{{asset('js/profilescriptt.js')}}"></script>
+<script src="{{asset('js/profileActivity.js')}}" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function (){
         setTimeout(function (){
@@ -167,8 +170,8 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
 
 
     })
-
 </script>
+@endsection
 
 @endsection
-<script src="{{asset('js/profileLikeDislike.js')}}" type="text/javascript"></script>
+{{--<script src="{{asset('js/profileLikeDislike.js')}}" type="text/javascript"></script>--}}

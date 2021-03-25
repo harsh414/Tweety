@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Tweet;
+use App\Retweet;
 
 class User extends Authenticatable
 {
@@ -29,6 +30,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Tweet::class);
     }
+
+    public function retweets()
+    {
+        return $this->hasMany(Retweet::class,'r_u_id');
+    }
+
 
     public function follow(User $user)  // used to follow a user
     {
@@ -56,5 +63,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Like::class);
     }
+
+    public function hadRetweeted(Tweet $tweet)
+    {
+        $t_id= $tweet->id;
+        return !!$this->retweets()->where('retweet_id',$t_id)->count();
+    }
+
 
 }

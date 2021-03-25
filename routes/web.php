@@ -16,16 +16,21 @@ Route::group(['middleware'=>['auth']],function(){
     });
     Route::post('tweetNew','TweetsController@store')->name('tweet.store');
     Route::post('tweets/likeOrDislike', 'TweetsController@likeOrDislike');
+    Route::post('tweets/retweet', 'TweetsController@retweet');
+
+
+    //Profile
+    Route::get('profile/{user}','ProfileController@index')->name('profile');
     Route::post('profile/{id}/likeOrDislike', 'TweetsController@likeOrDislike');
+    Route::post('profile/{id}/retweet', 'TweetsController@retweet');
+    Route::post('profile/{id}/status', 'TweetsController@status');
 
 });
 
 
-//Profile
-Route::get('profile/{user}','ProfileController@index')->name('profile');
-
 //return tweets media and likes of user
 Route::post('/profile/{id}/tweets','ProfileController@returnAllTweets')->name('show');
+Route::post('/profile/{id}/media','ProfileController@returnAllMedia');
 Route::post('/profile/{id}/likes','ProfileController@returnAllLikes');
 
 

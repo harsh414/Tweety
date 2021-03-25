@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -24,13 +27,16 @@
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TweetsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TweetsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/returnable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/returnable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/likeDislike.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/_newTweet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_newTweet.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/_sidebar-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_sidebar-links.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tweet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tweet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_27_195757_create_follows_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_27_195757_create_follows_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_30_205913_create_likes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_30_205913_create_likes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/feedLikeDislike.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/profileLikeDislike.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/profilescript.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/feed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/feed.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +169,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dailyexptracker" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -213,6 +219,18 @@
       <workItem from="1616006978446" duration="349000" />
       <workItem from="1616011285987" duration="12000" />
       <workItem from="1616011484959" duration="848000" />
+      <workItem from="1616077298661" duration="296000" />
+      <workItem from="1616080098050" duration="2913000" />
+      <workItem from="1616090329944" duration="3002000" />
+      <workItem from="1616102815663" duration="171000" />
+      <workItem from="1616169026328" duration="16000" />
+      <workItem from="1616224478553" duration="18152000" />
+      <workItem from="1616323025791" duration="1317000" />
+      <workItem from="1616384785871" duration="7246000" />
+      <workItem from="1616438985875" duration="5034000" />
+      <workItem from="1616502516815" duration="15580000" />
+      <workItem from="1616582090754" duration="17968000" />
+      <workItem from="1616667823707" duration="24657000" />
     </task>
     <servers />
   </component>
@@ -232,18 +250,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="455" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615319274651">
+    <state x="455" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616229406948">
       <screen x="0" y="0" width="1449" height="864" />
     </state>
-    <state x="455" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1449.864@0.0.1449.864" timestamp="1615319274651" />
+    <state x="455" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1449.864@0.0.1449.864" timestamp="1616229406948" />
     <state x="499" y="267" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1" timestamp="1612113079132">
       <screen x="0" y="0" width="1449" height="864" />
     </state>
     <state x="499" y="267" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1/0.0.1449.864@0.0.1449.864" timestamp="1612113079132" />
-    <state x="505" y="187" key="FileChooserDialogImpl" timestamp="1615987404242">
+    <state x="505" y="187" key="FileChooserDialogImpl" timestamp="1616230209262">
       <screen x="0" y="0" width="1449" height="864" />
     </state>
-    <state x="505" y="187" key="FileChooserDialogImpl/0.0.1449.864@0.0.1449.864" timestamp="1615987404242" />
+    <state x="505" y="187" key="FileChooserDialogImpl/0.0.1449.864@0.0.1449.864" timestamp="1616230209262" />
     <state x="553" y="155" key="NewPhpClassDialog" timestamp="1612113037760">
       <screen x="0" y="0" width="1449" height="864" />
     </state>
@@ -256,9 +274,20 @@
       <screen x="0" y="0" width="1449" height="864" />
     </state>
     <state x="382" y="197" key="run.anything.popup/0.0.1449.864@0.0.1449.864" timestamp="1615495064975" />
-    <state x="387" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1616006986537">
+    <state x="387" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1616698152323">
       <screen x="0" y="0" width="1449" height="864" />
     </state>
-    <state x="387" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1449.864@0.0.1449.864" timestamp="1616006986537" />
+    <state x="387" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1449.864@0.0.1449.864" timestamp="1616698152323" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/returnable.php</url>
+          <line>24</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

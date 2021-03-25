@@ -4,6 +4,8 @@ namespace App;
 use App\User;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class Tweet extends Model
 {
@@ -23,6 +25,22 @@ class Tweet extends Model
     {
         return $tweet->likes()->where('isLiked',true);
     }
+
+    public function retweets() //return all retweets of current tweet
+    {
+        return $this->hasMany(Retweet::class,'retweet_id');
+    }
+
+    public function isRetweeted(User $user,Tweet $tweet)  //for profile tweets of auth user
+    {
+        return !!$user->retweets()->where('retweet_id','=',$tweet->id)->count();
+    }
+
+    public function ifRetweetedBy()
+    {
+
+    }
+
 
 
 }
