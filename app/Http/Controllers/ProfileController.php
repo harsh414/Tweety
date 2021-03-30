@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\FollowEvent;
 use App\Tweet;
 use App\User;
 use Illuminate\Http\Request;
@@ -77,6 +78,8 @@ class ProfileController extends Controller
     {
         $user= User::find($id);
         auth()->user()->follow($user);
+        event(new FollowEvent(auth()->user(),$user)); // if a follow b than b will
+        // receive notificaion that a followed him
         return back();
     }
 

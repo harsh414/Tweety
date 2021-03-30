@@ -10,8 +10,9 @@
         </a>
     </li>
     <li>
-        <a class="font-bold text-lg mb-4 block" id="addShadow" href="" style="text-decoration: none">
-            Notifications
+        <a class="font-bold text-lg mb-4 block" id="addShadow" href="{{route('notifications')}}" style="text-decoration: none">
+            Notifications <span class="rounded-lg pl-1 pr-1" style="background: orange">
+                {{auth()->user()->unreadNotifications->count()}}</span>
         </a>
     </li>
     <li>

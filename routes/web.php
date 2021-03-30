@@ -10,13 +10,16 @@ Auth::routes();
 
 //Tweets routes
 Route::group(['middleware'=>['auth']],function(){
-    Route::get('tweets', 'TweetsController@index')->name('tweets');
-    Route::get('tweets/feed', function (){
+    Route::get('/tweets', 'TweetsController@index')->name('tweets');
+    Route::get('/tweets/{id}', 'TweetsController@showTweet')->name('tweetshow');
+    Route::get('/tweets/feed', function (){
         return view('try');
     });
     Route::post('tweetNew','TweetsController@store')->name('tweet.store');
     Route::post('tweets/likeOrDislike', 'TweetsController@likeOrDislike');
     Route::post('tweets/retweet', 'TweetsController@retweet');
+    Route::post('tweets/{id}/likeOrDislike', 'TweetsController@likeOrDislike');
+    Route::post('tweets/{id}/retweet', 'TweetsController@retweet');
 
 
     //Profile
@@ -38,5 +41,7 @@ Route::post('/profile/{id}/likes','ProfileController@returnAllLikes');
 Route::put('/profile/{id}','ProfileController@update')->name('updateProfile'); //update Profile
 Route::post('/profile/{id}/follow','ProfileController@follow')->name('follow'); //update Profile
 Route::post('/profile/{id}/unfollow','ProfileController@unfollow')->name('unfollow'); //update Profile
+
+Route::get('/notifications','HomeController@notifications')->name('notifications');
 
 

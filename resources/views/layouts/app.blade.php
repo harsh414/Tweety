@@ -79,11 +79,16 @@
         $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
     });
 
-    $(function($){ // wait until the DOM is ready
-        $("#butt").click(function (){
-            alert(1);
-        })
+    $(function($) {
+        $("#notificationBg").hover(function () {
+            $(this).css("background-color", "#ccffff");
+        }, function () {
+            $(this).css("background-color", "white");
+        });
     });
+
+
+
 
 </script>
 @yield('scripts')

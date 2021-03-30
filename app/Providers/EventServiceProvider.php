@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Events\FollowEvent;
+use App\Events\NewTweetEvent;
+use App\Events\NewUserRegisteredEvent;
+use App\Listeners\FollowListener;
+use App\Listeners\NewTweetListener;
+use App\Listeners\NewUserRegisteredListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -15,8 +21,16 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
+        NewUserRegisteredEvent::class => [
+            NewUserRegisteredListener::class,
+        ],
+
+        NewTweetEvent::class=>[
+            NewTweetListener::class,
+        ],
+
+        FollowEvent::class=>[
+            FollowListener::class,
         ],
     ];
 

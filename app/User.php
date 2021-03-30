@@ -53,6 +53,8 @@ class User extends Authenticatable
         belongsToMany(User::class,'follows','user_id','following_user_id');
     }
 
+
+
     public function isFollowing(User $user)
     {
         // !! represents the same as (bool)  typecast to bool

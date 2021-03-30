@@ -36,10 +36,7 @@ class Tweet extends Model
         return !!$user->retweets()->where('retweet_id','=',$tweet->id)->count();
     }
 
-    public function ifRetweetedBy()
-    {
 
-    }
 
 
 
