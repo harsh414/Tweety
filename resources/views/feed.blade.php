@@ -43,9 +43,10 @@
                                 <source src="{{$tweet->mediaurl}}" type="video/mp4">
                             </video>
                         </div>
-                        @endif
-                        @endif
-                        </p>
+                    @endif
+                @endif
+
+                </p>
             </div>
         </div>
         <div class="lg:ml-7 mt-3 flex justify-content-around" id="refLikes{{$tweet->id}}">
@@ -78,6 +79,8 @@
         </div>
     </div>
 @endforeach
+
+
 
 
 <script src="{{asset('js/feedActivity.js')}}" type="text/javascript"></script>

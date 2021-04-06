@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tweet;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,18 +21,33 @@ class HomeController extends Controller
 
     public function notifications()
     {
-        $users =auth()->user()->following;
-        $users_id= auth()->user()->following()->pluck('id'); // id of users i follow
-        $User= DB::table('users');
-        foreach ($users as $user) {
-            $ids = $user->following()->pluck('id');   // id of users my follower follow
-            $User = $User->whereIn('id',$ids,'or');
+        $u_id= auth()->user()->id;
+        $global_array= array(); //will contain id of who_to_follow users
+        $tweetIDs = auth()->user()->following()->pluck('id');
+        $tweetIDs->push(auth()->user()->id);
+        $users_id= auth()->user()->following()->pluck('id'); //id of users i follow
+
+        foreach ($users_id as $id){
+            $userr= User::find($id);
+            $id_array= $userr->following->pluck('id');
+            foreach ($id_array as $i){
+                array_push($global_array,$i);
+            }
         }
-        $User=$User->whereNotIn('id',$users_id,'and'); //exclude common followers
-        $User= $User->where('id','!=',auth()->user()->id);
-        $User=$User->inRandomOrder()->take(5)->get();
+        $global_array= array_unique($global_array);
+        if (in_array(auth()->user()->id, $global_array)){
+            unset($global_array[array_search(auth()->user()->id,$global_array)]);
+        }
+        //below is selecting users from global_array but discarding already following
+        $w_t_f= DB::table('users')->whereIn('id',$global_array)->
+        whereNotIn('id',$users_id);
+        $w_t_f= $w_t_f->inRandomOrder()->take('3')->get();
+        if($w_t_f->count() < 4)
+        {
+            $w_t_f= User::whereNotIn('id',$users_id)->where('id','!=',auth()->user()->id)->take(3)->get();
+        }
         return view('notifications',[
-            'who_to_follow'=>$User,
+            'who_to_follow'=>$w_t_f,
         ]);
     }
 

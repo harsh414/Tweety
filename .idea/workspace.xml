@@ -24,17 +24,21 @@
   <component name="ChangeListManager">
     <list default="true" id="e9eb8066-9a5f-4df8-989c-408ee8e194ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TweetsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TweetsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/returnable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/returnable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Tweet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tweet.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tweetActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/tweetActivity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/_friends-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_friends-list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/_sidebar-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_sidebar-links.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/_whom-to-follow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_whom-to-follow.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/feed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/feed.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/try.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/try.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/notifications.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/notifications.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +52,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -232,7 +244,17 @@
       <workItem from="1616667823707" duration="25258000" />
       <workItem from="1617023144523" duration="655000" />
       <workItem from="1617023823436" duration="6820000" />
-      <workItem from="1617088955041" duration="24501000" />
+      <workItem from="1617088955041" duration="24738000" />
+      <workItem from="1617176238154" duration="8474000" />
+      <workItem from="1617214252322" duration="6977000" />
+      <workItem from="1617372285982" duration="35000" />
+      <workItem from="1617386911388" duration="5327000" />
+      <workItem from="1617439978765" duration="13933000" />
+      <workItem from="1617495079484" duration="1661000" />
+      <workItem from="1617547262637" duration="1199000" />
+      <workItem from="1617646146174" duration="2419000" />
+      <workItem from="1617651939275" duration="1156000" />
+      <workItem from="1617696375364" duration="11272000" />
     </task>
     <servers />
   </component>
@@ -250,44 +272,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="455" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617133583323">
-      <screen x="0" y="0" width="1449" height="864" />
-    </state>
-    <state x="455" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1449.864@0.0.1449.864" timestamp="1617133583323" />
-    <state x="499" y="267" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1" timestamp="1617133510366">
-      <screen x="0" y="0" width="1449" height="864" />
-    </state>
-    <state x="499" y="267" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1/0.0.1449.864@0.0.1449.864" timestamp="1617133510366" />
-    <state x="499" y="275" key="#com.jetbrains.php.refactoring.pullPush.pushDown.PhpPushDownDialog#" timestamp="1617133488225">
-      <screen x="0" y="0" width="1449" height="864" />
-    </state>
-    <state x="499" y="275" key="#com.jetbrains.php.refactoring.pullPush.pushDown.PhpPushDownDialog#/0.0.1449.864@0.0.1449.864" timestamp="1617133488225" />
-    <state x="505" y="187" key="FileChooserDialogImpl" timestamp="1617036051240">
-      <screen x="0" y="0" width="1449" height="864" />
-    </state>
-    <state x="505" y="187" key="FileChooserDialogImpl/0.0.1449.864@0.0.1449.864" timestamp="1617036051240" />
-    <state x="553" y="155" key="NewPhpClassDialog" timestamp="1617133408392">
-      <screen x="0" y="0" width="1449" height="864" />
-    </state>
-    <state x="553" y="155" key="NewPhpClassDialog/0.0.1449.864@0.0.1449.864" timestamp="1617133408392" />
-    <state x="234" y="77" key="SettingsEditor" timestamp="1617133369349">
-      <screen x="0" y="0" width="1449" height="864" />
-    </state>
-    <state x="234" y="77" key="SettingsEditor/0.0.1449.864@0.0.1449.864" timestamp="1617133369349" />
-    <state x="334" y="102" width="1031" height="750" key="dock-window-1" timestamp="1612003078162">
-      <screen x="0" y="0" width="1449" height="864" />
-    </state>
-    <state x="334" y="102" width="1031" height="750" key="dock-window-1/0.0.1449.864@0.0.1449.864" timestamp="1612003078162" />
-    <state x="382" y="197" key="run.anything.popup" timestamp="1617132973764">
-      <screen x="0" y="0" width="1449" height="864" />
-    </state>
-    <state x="382" y="197" key="run.anything.popup/0.0.1449.864@0.0.1449.864" timestamp="1617132973764" />
-    <state x="387" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1617134917298">
-      <screen x="0" y="0" width="1449" height="864" />
-    </state>
-    <state x="387" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1449.864@0.0.1449.864" timestamp="1617134917298" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

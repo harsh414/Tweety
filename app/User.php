@@ -72,5 +72,11 @@ class User extends Authenticatable
         return !!$this->retweets()->where('retweet_id',$t_id)->count();
     }
 
+    public function allNotifications()
+    {
+        return $this->hasMany(Notification::class,'notifiable_id');
+    }
+
+
 
 }

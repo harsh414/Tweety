@@ -16,6 +16,17 @@ use Illuminate\Support\Facades\Storage;
 class TweetsController extends Controller
 {
     use tweetActivity; //for likeDislike and retweet a tweet
+
+    public function getstarted()
+    {
+        $num_users= User::all();
+        $users= User::inRandomOrder()->paginate(8);
+        return view('getstarted',[
+            'users'=>$users,
+        ]);
+    }
+
+
     public function index()
     {
         $global_array= array(); // will contain id of who_to_follow users
@@ -41,8 +52,12 @@ class TweetsController extends Controller
         $w_t_f= DB::table('users')->whereIn('id',$global_array)->
             whereNotIn('id',$users_id);
         $w_t_f= $w_t_f->inRandomOrder()->take('5')->get();
+        if($w_t_f->count() < 4)
+        {
+            $w_t_f= User::whereNotIn('id',$users_id)->where('id','!=',auth()->user()->id)->take(5)->get();
+        }
 
-        $tweets= Tweet::whereIn('user_id',$users_id)
+        $tweets=Tweet::whereIn('user_id',$users_id)
             ->orWhere('user_id',auth()->user()->id)->latest()->get(); //tweets collection
 
         $twodarray= array();
@@ -60,8 +75,15 @@ class TweetsController extends Controller
             }
         }
 
+        if(count($w_t_f)==0){
+            $new_to_follow= User::inRandomOrder()->take(5)->get();
+        }
 
 
+        if(count($tweets)==0)  //if its new user then display some tweets of random users
+        {
+            $tweets= Tweet::inRandomOrder()->take(10)->get();
+        }
 
 
         //****************************************************** // retweets testing ends
@@ -102,28 +124,26 @@ class TweetsController extends Controller
     }
 
 
-    public function returnAll()
-    {
-        $output='sndfis';
-        $data = array(
-            'table_data'  => $output,
-        );
-
-        echo json_encode($data);
-    }
-
-
+//    public function returnAll()
+//    {
+//        $output='sndfis';
+//        $data = array(
+//            'table_data'  => $output,
+//        );
+//
+//        echo json_encode($data);
+//    }
 
 
     public function showTweet($tid)
     {
+//        auth()->user()->notifications->where('id',$nid)->markAsRead();
         $global_array= array(); // will contain id of who_to_follow users
         $tweetIDs = auth()->user()->following()->pluck('id');
         $tweetIDs->push(auth()->user()->id);
         //Whom to follow section
         $users= auth()->user()->following;
         $users_id= auth()->user()->following()->pluck('id'); // id of users i follow
-
 //        ************testing
         foreach ($users_id as $id){
             $userr= User::find($id);

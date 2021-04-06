@@ -26,7 +26,9 @@
 
 {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>--}}
     <script src= "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>
-
+    <style>
+        .ui-datepicker .ui-datepicker-title select{color: #000;}
+    </style>
 @yield('linkrel')
 
     <!-- Styles -->
@@ -35,9 +37,9 @@
 </head>
 <body>
     <div id="app">
-        <section class="px-8 py-2 mb-6 mt-2">
+        <section class="px-8 py-2 mt-2" style="margin-bottom: 4rem">
             <header class="container mx-auto">
-                <h1>
+                <h1 class="lg:fixed ">
                     <a href="tweets"><img src="{{asset('images/logo.jpg')}}"
                                           class="rounded rounded-lg border" style="height: 35px;width: 50px" alt="Tweety"></a>
                 </h1>
@@ -49,20 +51,20 @@
             <main class="container mx-auto">
                 <div class="lg:flex justify-between">
 
-                    <div class="lg:w-48 lg:ml-6 md:ml-3">
+                    <div class="lg:w-48 lg:ml-6 md:ml-3 lg:fixed">
+
                         @if(auth()->user())
                         @include('_sidebar-links')
                         @endif
                     </div>
 
-
                     {{--    Timeline--}}
-                    <div class="lg:flex-1 lg:mx-10 mb-8">
+                    <div class="lg:flex-1 lg:mx-10 mb-8 lg:ml-56">
                         @yield('content')
                     </div>
 
                     @if(auth()->user())
-                    <div class="lg:w-1/6 bg-gray-100 lg:mr-8 md:mr-4">
+                    <div class="lg:w-1/6 bg-gray-100 lg:mr-6 md:mr-4">
                         @include('_friends-list')
                         @include('_whom-to-follow')
                     </div>
@@ -72,23 +74,38 @@
 
         </section>
     </div>
+
 </body>
 </html>
 <script>
+
     $(function($){ // wait until the DOM is ready
-        $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
-    });
-
-    $(function($) {
-        $("#notificationBg").hover(function () {
-            $(this).css("background-color", "#ccffff");
-        }, function () {
-            $(this).css("background-color", "white");
+        $("#datepicker").datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-40:+40"
         });
+        $("#addShadow li").hover(function (){
+            $(this).css('background-color','#ccffff');
+        },function (){
+            $(this).css('background-color','white');
+        });
+        $("#more").click(function (){
+            $("#logout").css('display','block');
+        });
+
+        $("#search_more_users").hover(function (){
+            $(this).css('background-color','#4d4dff');
+        }, function() {
+            $(this).css('background-color','#9999ff');
+        })
+
+        $("#top").click(function (){
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
     });
-
-
-
 
 </script>
 @yield('scripts')

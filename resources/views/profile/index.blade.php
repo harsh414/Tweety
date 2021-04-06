@@ -83,7 +83,7 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="" id="exampleModalLabel">Edit Profile</h5>
+                <h5 class="font-weight-bold" style="font-family: cursive" id="exampleModalLabel">Edit Profile</h5>
                 <button type="submit" id="UpdateProfile" class="btn btn-primary">Save</button>
             </div>
             <div class="">
@@ -100,20 +100,20 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
                    onchange="document.getElementById('profile_img').src = window.URL.createObjectURL(this.files[0])">
             <div class="modal-body">
             <div class="mt-1 border border-gray-50">
-            <h3 class="text-sm lg:mt-1">Name</h3>
+            <h3 class="text-sm lg:mt-1 ml-1 font-weight-bold" style="font-family: cursive">Name</h3>
                 <textarea name="name" class="w-full px-4 py-2" id="name" placeholder="{{$profile->name}}" style="outline: none">
                     {{$profile->name}}
                 </textarea>
             </div>
 
-            <div class="mt-1 border border-gray-100">
-                <h3 class="text-sm lg:ml-1">Bio</h3>
+            <div class="mt-3 border border-gray-100">
+                <h3 class="text-sm lg:ml-1 lg:mt-1 ml-1 font-weight-bold" style="font-family: cursive">Bio</h3>
                 <textarea name="bio" id="bio" class="w-full px-4 py-2" placeholder="{{$profile->bio}}" style="outline: none">
 
                 </textarea>
             </div>
              <div>
-                 <h3 class="text-sm lg:ml-1">Birth date</h3>
+                 <h3 class="text-sm lg:ml-1 lg:mt-3 ml-1 font-bold" style="font-family: cursive">Birth date</h3>
                  <input type="" style="outline: none" id="datepicker" name="dob" class="border border-gray-500 pl-2 text-sm">
              </div>
             </div>
