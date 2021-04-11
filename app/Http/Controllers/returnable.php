@@ -86,7 +86,7 @@ trait returnable
                         ' . $tweet->body . '
                     ';
                     if($tweet->mediaurl != "") {
-                        if ($tweet->mediaformat == 'png' || $tweet->mediaformat == 'jpg') {
+                        if ($tweet->mediaformat == 'png' || $tweet->mediaformat == 'jpg' || $tweet->mediaformat=='gif') {
                             $output .= '
                         <div style="width: auto;max-height: 300px;box-shadow: 4px 5px 7px 3px lightgray" class="mt-4 mb-3 lg:ml-6 lg:mr-6">
                             <img src="'.$tweet->mediaurl.'" style="width:100vw; max-height: 300px;" class="rounded"/>
@@ -192,7 +192,7 @@ trait returnable
                  '. $tweet->body . '
                  ';
                 if($tweet->mediaurl != "") {
-                    if ($tweet->mediaformat == 'png' || $tweet->mediaformat == 'jpg') {
+                    if ($tweet->mediaformat == 'png' || $tweet->mediaformat == 'jpg' || $tweet->mediaformat=='gif') {
                         $output .= '
                                 <div style="width: auto;max-height: 300px;box-shadow: 4px 5px 7px 3px lightgray" class="mt-4 mb-3 lg:ml-6 lg:mr-6">
                                     <img src="'.$tweet->mediaurl.'" style="width:100vw; max-height: 300px;" class="rounded"/>
@@ -306,7 +306,7 @@ trait returnable
                 ' . $tweet->body . '
                 ';
                 if($tweet->mediaurl != "") {
-                    if ($tweet->mediaformat == 'png' || $tweet->mediaformat == 'jpg') {
+                    if ($tweet->mediaformat == 'png' || $tweet->mediaformat == 'jpg'  || $tweet->mediaformat=='gif') {
                         $output .= '
                             <div style="width: auto;max-height: 300px;box-shadow: 4px 5px 7px 3px lightgray" class="mt-4 mb-3 lg:ml-6 lg:mr-6">
                                 <img src="'.$tweet->mediaurl.'" style="width:100vw; max-height: 300px;" class="rounded"/>

@@ -51,10 +51,9 @@ class ProfileController extends Controller
 
 
 
-        $status_user= User::find($id);
-        $status= auth()->user()->isFollowing($status_user);
-        if($status) $status='Following';
-        else $status='Follow';
+        $status_user= User::find($u_id);
+        $isFoll = auth()->user()->isFollowing($status_user);
+        (bool)$isFoll == 'true' ? $status="Following" : $status="Follow";
         return view('profile.index',[
             'profile'=>$profile_user,
             'who_to_follow'=>$w_t_f,
@@ -91,7 +90,7 @@ class ProfileController extends Controller
             return back()->with('message','Failed to Update');
     }
 
-    public function follow($id)
+    public function follow($url='',$id)
     {
         $user= User::find($id);
         auth()->user()->follow($user);
@@ -100,7 +99,7 @@ class ProfileController extends Controller
         return back();
     }
 
-    public function unfollow($id)
+    public function unfollow($url='',$id)
     {
         $user= User::find($id);
         auth()->user()->unfollow($user);

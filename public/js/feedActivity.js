@@ -7,6 +7,7 @@ function likeUpdate(id) {
     $.ajax({
         type:'POST',
         url: "tweets/likeOrDislike",
+        // data:{_token: '{{ csrf_token() }}'},  way to pass csrf token
         data:{t_id:id},
         dataType:"json",
         success:function(data){

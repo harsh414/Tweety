@@ -24,21 +24,19 @@
   <component name="ChangeListManager">
     <list default="true" id="e9eb8066-9a5f-4df8-989c-408ee8e194ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TweetsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TweetsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/returnable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/returnable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tweetActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/tweetActivity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/feedActivity.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/feedActivity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/_friends-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_friends-list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/_sidebar-links.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_sidebar-links.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/_newTweet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_newTweet.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/_whom-to-follow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/_whom-to-follow.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/feed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/feed.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/getstarted.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/getstarted.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/notifications.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/notifications.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +177,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tutorial" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../intern" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -254,7 +252,16 @@
       <workItem from="1617547262637" duration="1199000" />
       <workItem from="1617646146174" duration="2419000" />
       <workItem from="1617651939275" duration="1156000" />
-      <workItem from="1617696375364" duration="11614000" />
+      <workItem from="1617696375364" duration="13900000" />
+      <workItem from="1617767053365" duration="1490000" />
+      <workItem from="1617777873188" duration="14251000" />
+      <workItem from="1617894673714" duration="9557000" />
+      <workItem from="1617993338219" duration="1519000" />
+      <workItem from="1617995542259" duration="4439000" />
+      <workItem from="1618038949768" duration="2462000" />
+      <workItem from="1618044789775" duration="2086000" />
+      <workItem from="1618047561365" duration="189000" />
+      <workItem from="1618138517068" duration="11474000" />
     </task>
     <servers />
   </component>

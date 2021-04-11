@@ -53,13 +53,12 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
 
 <div class="flex gap-2">
     <img src="{{asset('images/calendar.png')}}" style="height: 20px; width: 20px" alt="">
-    <div>Joined {{ $profile->created_at->format('M Y') }}</div>
+    <div>Joined  {{ $profile->created_at->format('M Y') }}</div>
 </div>
 <div class="flex gap-5">
     <div class="text-sm text-gray-500"><span class="font-bold text-black">{{count($profile->following)}}</span> Following</div>
     <div class="text-sm text-gray-500"><span class="font-bold text-black">{{$followers}}</span> Followers</div>
 </div>
-
 
 <ul class="mt-4 flex justify-between" id="friends">
     <li style="display: none" class="getuser" id="{{$profile->id}}"></li>
@@ -130,7 +129,6 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
 <div class="modal fade" id="imagePreview" tabindex="-1" role="dialog" aria-labelledby="imagePreviewLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-
             <div class="modal-body">
                 <img src="{{$profile->url}}" style="width: 100vw;height: auto" alt="">
             </div>
@@ -168,10 +166,26 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
             $(this).addClass("text-blue-400");
         });
 
+        // $("#image_hover_modal img").hover(function (){
+        //     var id= $(this).attr('id');
+        //     var location=   window.location.pathname.split('/')[3];
+        //     var url_id= window.location.pathname.split('/')[4];
+        //     alert(location);
+        //     $.ajax({
+        //         type:'POST',
+        //         url: location+"/"+url_id+"/hoverUser",
+        //         data:{id:id},
+        //         dataType:"json",
+        //         success:function(data){
+        //             $("#modal_content").html(data.data);
+        //             $("#display_hover_image").trigger('click');
+        //         }
+        //     });
+        //
+        // },function (){
+        // });
 
     })
 </script>
 @endsection
-
 @endsection
-{{--<script src="{{asset('js/profileLikeDislike.js')}}" type="text/javascript"></script>--}}

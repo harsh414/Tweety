@@ -9,7 +9,7 @@
     @foreach($users as $user)
     <div class="text-center flex justify-content-around mt-6 lg:border shadow-inner p-4">
         {{-- flex item 1--}}
-        <img src="{{$user->url}}" alt="" class="shadow pr-1 rounded-full lg:ml-2"
+        <img src="{{$user->url}}" alt="" class="shadow rounded-full lg:ml-2"
              style="border:2px solid gray; height: 60px; width: 60px;border-right-color: white; border-bottom-color: white ">
 
         {{-- flex item 2--}}
@@ -18,11 +18,12 @@
             <div class="font-weight-bold" style="color: gray;cursor: pointer">{{$user->name}}</div>
             </a>
 
-            <div class="ml-2"><span class="font-weight-bold">{{count($user->tweets)}}</span> Tweets
-                &nbsp; &nbsp;<span class="font-weight-bold">{{count($user->retweets)}}</span> Retweets </div>
+            <div class="ml-2 flex mt-1">
+                <div><span class="font-weight-bold">{{count($user->tweets)}}</span> Tweets</div>
+                &nbsp;<div class="ml-1"><span class="font-weight-bold">{{count($user->retweets)}}</span> Retweets</div>
+            </div>
         </div>
 
-        {{-- flex item 3--}}
         <div class="ml-6">
             <form action="{{ auth()->user()->isFollowing($user) ?  "getstarted/".$user->id."/unfollow" : "getstarted/".$user->id."/follow"}}" method="POST">
                 {{@csrf_field()}}
@@ -46,6 +47,7 @@
 @section('scripts')
     <script type="text/javascript">
         $(function(){
+
             function fetch_users(query='')
             {
                 $.ajax({
@@ -63,6 +65,11 @@
                 var query= $(this).val();
                 fetch_users(query);
             });
+
+
         });
     </script>
+
+
 @endsection
+

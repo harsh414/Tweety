@@ -29,18 +29,46 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
     <body>
-    <div style="display: flex">
-        <div class="w-50">
+{{--    <div style="display: flex">--}}
+{{--        <div class="w-50">--}}
+{{--            <img src="{{asset('images/welcomeimage.jpg')}}" style=" width:100%;height: 100vh" alt="">--}}
+{{--        </div>--}}
+{{--        <div class="w-50 ml-4">--}}
+{{--            <img src="{{asset('images/logo.jpg')}}"--}}
+{{--                 class="rounded rounded-lg mt-12 ml-4" style="height: 60px;width: 80px" alt="Tweety">--}}
+{{--            <div style="margin-top: 20vh" class="font-extrabold text-5xl tracking-widest ml-4">--}}
+{{--                Happening now--}}
+{{--            </div>--}}
+{{--            <div style="margin-top: 3.5rem" class="font-extrabold text-3xl tracking-wide ml-4">--}}
+{{--                Join Twitter Today.--}}
+{{--            </div>--}}
+
+{{--            <div class="ml-4 mt-14 align-items-center">--}}
+{{--                <div class="links">--}}
+{{--                    @auth--}}
+{{--                        <a href="{{ url('/tweets') }}"><button class="bg-blue-400 w-25 shadow rounded-lg px-4 py-2 my-1 text-white lg:mr-1" >Home</button></a>--}}
+{{--                    @else--}}
+{{--                        <a href="{{ route('register') }}"><button class="bg-white-400 w-25 shadow font-bold rounded-lg px-4 py-2 my-1 text-blue-600 lg:mr-1" >Sign Up</button></a>--}}
+{{--                        <br><br><br>--}}
+{{--                        <a href="{{ route('login') }}"><button class="bg-blue-400 w-25 shadow rounded-lg px-4 py-2 my-1 text-white lg:mr-1">Login</button></a>--}}
+
+{{--                    @endauth--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+<div class="">
+    <div class="row">
+        <div class="col-md-4" id="back">
             <img src="{{asset('images/welcomeimage.jpg')}}" style=" width:100%;height: 100vh" alt="">
         </div>
-        <div class="w-50 ml-4">
-            <img src="{{asset('images/logo.jpg')}}"
-                 class="rounded rounded-lg mt-12 ml-4" style="height: 60px;width: 80px" alt="Tweety">
-            <div style="margin-top: 20vh" class="font-extrabold text-5xl tracking-widest ml-4">
-                Happening now
+        <div class="col-md-8" style="background: black;opacity: 0.8 ;">
+            <img src="{{asset('images/logo.jpg')}}" style=" width:45px;height: 45px;margin-top: 5rem">
+            <div class="font-weight-bold" style="font-size: 40px;letter-spacing: 2px; font-family: 'cursive';margin-top: 5rem;color: blue">
+                <span style="color: white;font-size: 44px" class="font-extrabold" >Happening Now</span>
             </div>
-            <div style="margin-top: 3.5rem" class="font-extrabold text-3xl tracking-wide ml-4">
-                Join Twitter Today.
+            <div style="color:white;letter-spacing:2px;margin-top: 3rem;font-size: 24px;font-family: 'cursive'" class="text-3xl tracking-wide ml-4">
+                Join Twitter Today
             </div>
 
             <div class="ml-4 mt-14 align-items-center">
@@ -48,22 +76,17 @@
                     @auth
                         <a href="{{ url('/tweets') }}"><button class="bg-blue-400 w-25 shadow rounded-lg px-4 py-2 my-1 text-white lg:mr-1" >Home</button></a>
                     @else
-                        <a href="{{ route('register') }}"><button class="bg-white-400 w-25 shadow font-bold rounded-lg px-4 py-2 my-1 text-blue-600 lg:mr-1" >Sign Up</button></a>
+                        <a href="{{ route('register') }}"><button class="bg-blue-400 w-25 shadow font-bold text-white rounded-lg px-4 py-2 my-1 text-blue-600 lg:mr-1" >Sign Up</button></a>
                         <br><br><br>
-                        <a href="{{ route('login') }}"><button class="bg-blue-400 w-25 shadow rounded-lg px-4 py-2 my-1 text-white lg:mr-1">Login</button></a>
+                        <a href="{{ route('login') }}"><button class="bg-dark w-25 shadow font-bold text-black rounded-lg px-4 py-2 my-1 text-white lg:mr-1">Login</button></a>
 
                     @endauth
                 </div>
             </div>
         </div>
     </div>
-{{--        <div class="flex-center position-ref full-height">--}}
+</div>
 
-
-{{--            <div class="content">--}}
-{{--                <div class="title m-b-md">--}}
-{{--                    tweety--}}
-{{--                </div>--}}
 
 
     </body>

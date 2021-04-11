@@ -20,11 +20,12 @@ class TweetsController extends Controller
     public function getstarted()
     {
         $num_users= User::all();
-        $users= User::inRandomOrder()->paginate(8);
+        $users= User::inRandomOrder()->paginate('8');
         return view('getstarted',[
             'users'=>$users,
         ]);
     }
+
 
 
     public function index()
@@ -56,7 +57,7 @@ class TweetsController extends Controller
         {
             $w_t_f= User::whereNotIn('id',$users_id)->where('id','!=',auth()->user()->id)->take(5)->get();
         }
-
+//
         $tweets=Tweet::whereIn('user_id',$users_id)
             ->orWhere('user_id',auth()->user()->id)->latest()->get(); //tweets collection
 
@@ -122,17 +123,6 @@ class TweetsController extends Controller
         return redirect('/tweets');
 
     }
-
-
-//    public function returnAll()
-//    {
-//        $output='sndfis';
-//        $data = array(
-//            'table_data'  => $output,
-//        );
-//
-//        echo json_encode($data);
-//    }
 
 
     public function showTweet($tid)

@@ -74,10 +74,11 @@
 
         </section>
     </div>
-
+@include('_modal')
 </body>
 </html>
-<script>
+
+<script type="text/javascript">
 
     $(function($){ // wait until the DOM is ready
         $("#datepicker").datepicker({
@@ -99,14 +100,18 @@
             $(this).css('background-color','#4d4dff');
         }, function() {
             $(this).css('background-color','#9999ff');
-        })
-
-        $("#top").click(function (){
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-    });
+        $(window).load(function(){
+            setTimeout(function(){
+                $('#myModal33').modal('show');
+            }, 2000);
+        });
 
+
+    });
 </script>
 @yield('scripts')
+
+
 

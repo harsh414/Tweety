@@ -10,7 +10,7 @@
         </div>
 
 
-        <input type="file" accept="jpg|png|mp4" name="upload"  onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])" id="upload" style="display: none">
+        <input type="file" accept=".jpg,.jpeg,.mp4,.gif" name="upload" onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])" id="upload" style="display: none">
         <button type="button" id="check"  style="margin-left: 1rem;outline: none">
             <img src="https://image.flaticon.com/icons/png/128/1040/1040241.png" style="width: 28px;height: 28px" alt="">
         </button>
