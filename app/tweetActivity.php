@@ -74,10 +74,10 @@ trait tweetActivity
         $tweet= Tweet::find($tweet_id);
         $output='';
 //        if(auth()->user()->hadRetweeted($tweet) == false){
-//            $retweet= new Retweet;
-//            $retweet->r_u_id= $auth_id;
-//            $retweet->retweet_id= $tweet_id;
-//            $retweet->save();
+            $retweet= new Retweet;
+            $retweet->r_u_id= $auth_id;
+            $retweet->retweet_id= $tweet_id;
+            $retweet->save();
 //        }else{
 //            $retweet= Retweet::where('r_u_id',$auth_id)
 //                ->where('retweet_id',$tweet_id);
