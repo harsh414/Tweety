@@ -75,7 +75,7 @@ trait tweetActivity
         $tweet= Tweet::find($tweet_id);
         $output='';
         if(auth()->user()->hadRetweeted($tweet) == false){
-        $sql= DB::insert("INSERT INTO retweets (`r_u_id`, `retweet_id`) VALUES ('$auth_id','$tweet_id')");
+//        $sql= DB::insert("INSERT INTO retweets (`r_u_id`, `retweet_id`) VALUES ('$auth_id','$tweet_id')");
         }else{
 
         }
