@@ -4,13 +4,15 @@
 namespace App;
 
 
+use Illuminate\Support\Facades\DB;
+
 trait Likeable
 {
 
     public function ifLikedBy(User $user,Tweet $tweet)
     {
-        return !!$user->likes()->where('tweet_id', $tweet->id)
-            ->where('isLiked', true)->count();
+        return !!$user->likes()->where('likes.tweet_id', $tweet->id)
+            ->where('likes.isLiked', true)->count();
     }
 
     public function like($user = null,  $liked = true)   // for liking a tweet

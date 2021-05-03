@@ -293,6 +293,18 @@ trait returnable
         $user = User::find($id);
         $tweets= $user->tweets()->where('mediaformat','!=','')->where('mediaurl','!=','')->get();
 
+        if($tweets->count()==0){
+            $output.='
+            <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">
+            <span class="font-bold text-center">Nothing here to display</span>
+            <div class="mt-2.5 font-bold text-2xl">Who to follow</div>
+            <a href="'.route('getstarted').'">
+            <button type="submit" class="bg-blue-400 shadow rounded-lg px-4 py-2 mt-2 text-white lg:mr-1" style="width: 30vw;">
+                Explore
+            </button>
+            </a>
+            ';
+        }
         foreach ($tweets as $tweet) {
             $output .= '
         <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">
@@ -403,7 +415,18 @@ trait returnable
         ON likes.user_id=$id AND tweets.id=likes.tweet_id
         WHERE isLiked=1;");
 
-
+        if(count($query)==0){
+            $output.='
+            <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">
+            <span class="font-bold text-center">No Recent Likes...</span>
+            <div class="mt-2.5 font-bold text-2xl">Who to follow</div>
+            <a href="'.route('getstarted').'">
+            <button type="submit" class="bg-blue-400 shadow rounded-lg px-4 py-2 mt-2 text-white lg:mr-1" style="width: 30vw;">
+                Explore
+            </button>
+            </a>
+            ';
+        }
         foreach ($query as $query) {
             $tweet_id= $query->tweet_id;
             $tweet= Tweet::find($tweet_id);
