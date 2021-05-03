@@ -13,15 +13,15 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('getstarted', 'TweetsController@getstarted')->name('getstarted');
     Route::post('getstarted/limitUsers', 'TweetsController@limitUsers')->name('limitUsers');
     Route::get('getstarted/action','ProfileController@action')->name('livesearch.action');
-    Route::get('tweets', 'TweetsController@index')->name('tweets');
-    Route::get('tweets/{id}', 'TweetsController@showTweet')->name('tweetshow');
+    Route::get('/tweets', 'TweetsController@index')->name('tweets');
+    Route::get('/tweets/{id}', 'TweetsController@showTweet')->name('tweetshow');
 
-    Route::post('tweetNew','TweetsController@store')->name('tweet.store');
-    Route::post('tweets/likeOrDislike', 'TweetsController@likeOrDislike');
-    Route::post('tweets/retweet', 'TweetsController@retweet');
-    Route::post('tweets/{id}/likeOrDislike', 'TweetsController@likeOrDislike');
-    Route::post('tweets/{id}/retweet', 'TweetsController@retweet');
-    Route::post('{tweets}/hoverUser', 'HoverableDataController@userdata')->name('hoverdata');
+    Route::post('/tweetNew','TweetsController@store')->name('tweet.store');
+    Route::post('/tweets/likeOrDislike', 'TweetsController@likeOrDislike');
+    Route::post('/tweets/retweet', 'TweetsController@retweet');
+    Route::post('/tweets/{id}/likeOrDislike', 'TweetsController@likeOrDislike');
+    Route::post('/tweets/{id}/retweet', 'TweetsController@retweet');
+    Route::post('/{tweets}/hoverUser', 'HoverableDataController@userdata')->name('hoverdata');
 //    Route::post('{tweets}/{id}/hoverUser', 'HoverableDataController@userdata')->name('hoverdata');
 
 

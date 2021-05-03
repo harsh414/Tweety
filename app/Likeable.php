@@ -11,8 +11,8 @@ trait Likeable
 
     public function ifLikedBy(User $user,Tweet $tweet)
     {
-        return !!$user->likes()->where('likes.tweet_id', $tweet->id)
-            ->where('likes.isliked', true)->count();
+        return !!$user->likes()->where('tweet_id', $tweet->id)
+            ->where('isliked', true)->count();
     }
 
     public function like($user = null,  $liked = true)   // for liking a tweet
@@ -21,7 +21,7 @@ trait Likeable
             [
                 'user_id' => $user ? $user->id : auth()->id,
             ],[
-                'isLiked' => $liked,
+                'isliked' => $liked,
             ]
         );
     }
