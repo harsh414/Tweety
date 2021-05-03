@@ -23,7 +23,7 @@ class Tweet extends Model
 
     public function num_likes($tweet)
     {
-        return $tweet->likes()->where('isLiked',true);
+        return $tweet->likes()->where('isliked',true);
     }
 
     public function retweets() //return all retweets of current tweet
