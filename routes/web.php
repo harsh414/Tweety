@@ -33,8 +33,9 @@ Route::group(['middleware'=>['auth']],function(){
     Route::post('profile/{id}/status', 'TweetsController@status');
 
 
-    //return tweets media and likes of user
+    //return tweets retweets media and likes of user
     Route::post('/profile/{id}/tweets','ProfileController@returnAllTweets')->name('show');
+    Route::post('/profile/{id}/getRetweets','ProfileController@returnAllRetweets');
     Route::post('/profile/{id}/media','ProfileController@returnAllMedia');
     Route::post('/profile/{id}/likes','ProfileController@returnAllLikes');
 

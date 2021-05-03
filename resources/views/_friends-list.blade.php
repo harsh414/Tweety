@@ -28,8 +28,9 @@
                 }
             });
             $("#image_hover_modal img").hover(function (){
+                var timeout;
                 var id= $(this).attr('id');
-                var location=   window.location.pathname.split('/')[3];
+                var location= window.location.pathname.split('/')[3];
                 $.ajax({
                     type:'POST',
                     url: location+"/hoverUser",

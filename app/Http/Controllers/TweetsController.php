@@ -100,9 +100,9 @@ class TweetsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'body'=> 'required | max:300 ',
+            'body'=> 'required | max:305 ',
             'file'=>'max:10000',
-    ]);
+        ]);
         $user= auth()->user();
         $tweet= new Tweet();
         $tweet->user_id= auth()->user()->id;

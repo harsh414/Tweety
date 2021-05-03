@@ -60,11 +60,12 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
     <div class="text-sm text-gray-500"><span class="font-bold text-black">{{$followers}}</span> Followers</div>
 </div>
 
-<ul class="mt-4 flex justify-between" id="friends">
+<ul class="mt-5 flex justify-between" id="friends">
     <li style="display: none" class="getuser" id="{{$profile->id}}"></li>
-    <li class=""><a style="cursor: pointer" class="tabc" id="tweets_tab" data-toggle="tabajax"> Tweets & Retweets</a></li>
-    <li class=""><a style="cursor: pointer" class="tabc"  id="media_tab"  data-toggle="tabajax"> Media</a></li>
-    <li class=""><a style="cursor: pointer" class="tabc" id="likes_tab"  data-toggle="tabajax">Likes</a></li>
+    <li class=""><a style="cursor: pointer" class="tabc font-bold" id="tweets_tab" data-toggle="tabajax">Tweets</a></li>
+    <li class=""><a style="cursor: pointer" class="tabc font-bold" id="retweets_tab" data-toggle="tabajax">Retweets</a></li>
+    <li class=""><a style="cursor: pointer" class="tabc font-bold"  id="media_tab"  data-toggle="tabajax"> Media</a></li>
+    <li class=""><a style="cursor: pointer" class="tabc font-bold" id="likes_tab"  data-toggle="tabajax">Likes</a></li>
 </ul>
 
 
@@ -113,7 +114,7 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
             </div>
              <div>
                  <h3 class="text-sm lg:ml-1 lg:mt-3 ml-1 font-bold" style="font-family: cursive">Birth date</h3>
-                 <input type="" style="outline: none" id="datepicker" name="dob" class="border border-gray-500 pl-2 text-sm">
+                 <input type="" readonly="readonly" style="outline: none" id="datepicker" name="dob" class="border border-gray-500 pl-2 text-sm">
              </div>
             </div>
             <div class="modal-footer">

@@ -1,4 +1,3 @@
-// <script type="text/javascript">
 $(document).ready(function (){
 
     $('.tabc').click(function(e) {
@@ -26,6 +25,19 @@ $(document).ready(function (){
                 }
             });
 
+        }
+
+        if(tabId=='retweets_tab'){
+            $("#content").empty();
+            $.ajax({
+                type:'POST',
+                url: "{{$profile->id}}/getRetweets",
+                data:{id:id},
+                dataType:'json',
+                success:function(data){
+                    $("#content").html(data.table_data);
+                }
+            });
         }
 
         if(tabId == 'media_tab'){
@@ -65,4 +77,3 @@ $(document).ready(function (){
     },3000);
 
 });
-// </script>

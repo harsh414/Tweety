@@ -2,11 +2,10 @@
 
 @section('content')
     <h1 class="font-weight-bolder mb-5 text-xl" style="letter-spacing: 1px">Notifications</h1>
-
     <hr class="mb-2 mt-2">
     @foreach(auth()->user()->notifications as $notification)
         @if($notification->data['type']=='Registration')
-            <div id="notificationBg" class="pt-1 style="cursor: pointer;background-color: #e6ffff;">
+            <div id="notificationBg" class="pt-1" style="cursor: pointer;background-color: #e6ffff">
                 <div class="flex mt-6">
                     <svg viewBox="0 0 24 24" style="height: 24px;width: 24px;align-self: center" class="r-4qtqp9 r-yyyyoo r-yucp9h r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"><g><path d="M22.99 11.295l-6.986-2.13-.877-.326-.325-.88L12.67.975c-.092-.303-.372-.51-.688-.51-.316 0-.596.207-.688.51l-2.392 7.84-1.774.657-6.148 1.82c-.306.092-.515.372-.515.69 0 .32.21.6.515.69l7.956 2.358 2.356 7.956c.09.306.37.515.69.515.32 0 .6-.21.69-.514l1.822-6.15.656-1.773 7.84-2.392c.303-.09.51-.37.51-.687 0-.316-.207-.596-.51-.688z" fill="#794BC4"></path></g></svg>
                     <img src="{{auth()->user()->url}}" style="height: 40px;width: 40px;" alt="" class="rounded-full ml-3">
@@ -15,6 +14,7 @@
                     {{$notification->data['message']}}
                 </div>
             </div>
+
 
 
         @elseif($notification->data['type']=='New tweet')

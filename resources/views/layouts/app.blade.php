@@ -23,11 +23,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resourcess/demos/style.css">
 
-{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>--}}
+    {{--    <script srcs="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>--}}
     <script src= "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>
     <style>
         .ui-datepicker .ui-datepicker-title select{color: #000;}
+        #progressbar{
+            border: none;
+            box-shadow: none;
+        }
     </style>
 @yield('linkrel')
 
@@ -102,11 +108,9 @@
             $(this).css('background-color','#9999ff');
         });
 
-        $(window).load(function(){
-            setTimeout(function(){
-                $('#myModal33').modal('show');
-            }, 2000);
-        });
+
+
+
 
 
     });

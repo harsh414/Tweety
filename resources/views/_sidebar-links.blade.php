@@ -46,11 +46,9 @@
         </a>
     </li>
     <li class="rounded-full p-2 lg:w-3/4" id="logout" style="display: none">
-
-
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="">
                 @csrf
-                <button type="submit">
+                <button type="submit" style="outline: none;">
                     <div class="bg-blue-400 shadow rounded-lg px-4 py-2 my-1 text-white lg:mr-1">
                         Logout
                     </div>

@@ -63,9 +63,12 @@
             <img src="{{asset('images/welcomeimage.jpg')}}" style=" width:100%;height: 100vh" alt="">
         </div>
         <div class="col-md-8" style="background: black;opacity: 0.8 ;">
-            <img src="{{asset('images/logo.jpg')}}" style=" width:45px;height: 45px;margin-top: 5rem">
+            <img src="{{asset('images/logo.jpg')}}" style=" width:45px;height: 45px;margin-top: 5rem;margin-left: 2rem">
             <div class="font-weight-bold" style="font-size: 40px;letter-spacing: 2px; font-family: 'cursive';margin-top: 5rem;color: blue">
-                <span style="color: white;font-size: 44px" class="font-extrabold" >Happening Now</span>
+                <span style="color: white;font-size: 44px;letter-spacing: 7px" class="ml-2 font-extrabold" >
+                    <span style="color: #ff5c33">Ha</span>pp<span style="color: #ffff33">e</span>n<span style="color: #ff5c33">ing</span>
+                    <span style="color:  #ffff33">N</span>ow
+                </span>
             </div>
             <div style="color:white;letter-spacing:2px;margin-top: 3rem;font-size: 24px;font-family: 'cursive'" class="text-3xl tracking-wide ml-4">
                 Join Twitter Today
