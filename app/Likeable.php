@@ -13,7 +13,7 @@ trait Likeable
     {
         $likeOrNot = DB::table('likes')->where('tweet_id', $tweet->id)
             ->where('user_id',$user->id)
-            ->where('isLiked', true)->get();
+            ->where('isliked', true)->get();
         if(count($likeOrNot)) return 1;
         else return 0;
 //        return !!$user->likes()->where('likes.tweet_id', $tweet->id)
