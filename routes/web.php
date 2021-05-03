@@ -10,9 +10,9 @@ Auth::routes();
 
 //Tweets routes
 Route::group(['middleware'=>['auth']],function(){
-    Route::get('getstarted', 'TweetsController@getstarted')->name('getstarted');
-    Route::post('getstarted/limitUsers', 'TweetsController@limitUsers')->name('limitUsers');
-    Route::get('getstarted/action','ProfileController@action')->name('livesearch.action');
+    Route::get('/getstarted', 'TweetsController@getstarted')->name('getstarted');
+    Route::post('/getstarted/limitUsers', 'TweetsController@limitUsers')->name('limitUsers');
+    Route::get('/getstarted/action','ProfileController@action')->name('livesearch.action');
     Route::get('/tweets', 'TweetsController@index')->name('tweets');
     Route::get('/tweets/{id}', 'TweetsController@showTweet')->name('tweetshow');
 
@@ -27,10 +27,10 @@ Route::group(['middleware'=>['auth']],function(){
 
 
     //Profile
-    Route::get('profile/{id}','ProfileController@index')->name('profile');
-    Route::post('profile/{id}/likeOrDislike', 'TweetsController@likeOrDislike');
-    Route::post('profile/{id}/retweet', 'TweetsController@retweet');
-    Route::post('profile/{id}/status', 'TweetsController@status');
+    Route::get('/profile/{id}','ProfileController@index')->name('profile');
+    Route::post('/profile/{id}/likeOrDislike', 'TweetsController@likeOrDislike');
+    Route::post('/profile/{id}/retweet', 'TweetsController@retweet');
+    Route::post('/profile/{id}/status', 'TweetsController@status');
 
 
     //return tweets retweets media and likes of user
