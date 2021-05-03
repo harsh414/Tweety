@@ -69,7 +69,7 @@ trait tweetActivity
 
     public function retweet(Request $request)
     {
-        $auth_id= Auth::id();
+        $auth_id= 1;
         $tweet_id = $request->get('t_id');
         $tweet= Tweet::find($tweet_id);
         if(auth()->user()->hadRetweeted($tweet) == false){
