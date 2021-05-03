@@ -6,7 +6,6 @@ namespace App;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 trait tweetActivity
 {
@@ -73,12 +72,17 @@ trait tweetActivity
         $auth_id= Auth::id();
         $tweet_id = $request->get('t_id');
         $tweet= Tweet::find($tweet_id);
-        $output='';
-        if(auth()->user()->hadRetweeted($tweet) == false){
-//        $sql= DB::insert("INSERT INTO retweets (`r_u_id`, `retweet_id`) VALUES ('$auth_id','$tweet_id')");
-        }else{
-
-        }
+        $output=$auth_id." ".$tweet_id;
+//        if(auth()->user()->hadRetweeted($tweet) == false){
+//            $retweet = new Retweet();
+//            $retweet->r_u_id= $auth_id;
+//            $retweet->retweet_id= $tweet_id;
+//            $retweet->save();
+//        }else{
+//            $retweet= Retweet::where('r_u_id',$auth_id)
+//                ->where('retweet_id',$tweet_id);
+//            $retweet->delete();
+//        }
 
 //        if($tweet->ifLikedBy(auth()->user(),$tweet)){
 //            $id=$tweet->id;
