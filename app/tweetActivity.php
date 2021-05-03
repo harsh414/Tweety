@@ -71,22 +71,21 @@ trait tweetActivity
     {
         $auth_id= Auth::id();
         $tweet_id = $request->get('t_id');
-        $output=$tweet_id;
-//        $tweet= Tweet::find($tweet_id);
-//        if(auth()->user()->hadRetweeted($tweet) == false){
-//            $retweet= new Retweet();
-//            $retweet->r_u_id= $auth_id;
-//            $retweet->retweet_id= $tweet_id;
-//            $retweet->save();
-//        }else{
-//            $retweet= Retweet::where('r_u_id',$auth_id)
-//                ->where('retweet_id',$tweet_id);
-//            $retweet->delete();
-//        }
-//
-//
-//
-//
+        $tweet= Tweet::find($tweet_id);
+        $output='';
+        if(auth()->user()->hadRetweeted($tweet) == false){
+            $output=0;
+            $retweet= new Retweet();
+            $retweet->r_u_id= $auth_id;
+            $retweet->retweet_id= $tweet_id;
+            $retweet->save();
+        }else{
+            $output=1;
+            $retweet= Retweet::where('r_u_id',$auth_id)
+                ->where('retweet_id',$tweet_id);
+            $retweet->delete();
+        }
+
 //        if($tweet->ifLikedBy(auth()->user(),$tweet)){
 //            $id=$tweet->id;
 //            $output.='
