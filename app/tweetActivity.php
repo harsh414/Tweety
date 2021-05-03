@@ -75,15 +75,15 @@ trait tweetActivity
         $output='';
         if(auth()->user()->hadRetweeted($tweet) == false){
             $output=0;
-            $retweet= new Retweet();
-            $retweet->r_u_id= $auth_id;
-            $retweet->retweet_id= $tweet_id;
-            $retweet->save();
+//            $retweet= new Retweet();
+//            $retweet->r_u_id= $auth_id;
+//            $retweet->retweet_id= $tweet_id;
+//            $retweet->save();
         }else{
             $output=1;
-            $retweet= Retweet::where('r_u_id',$auth_id)
-                ->where('retweet_id',$tweet_id);
-            $retweet->delete();
+//            $retweet= Retweet::where('r_u_id',$auth_id)
+//                ->where('retweet_id',$tweet_id);
+//            $retweet->delete();
         }
 
 //        if($tweet->ifLikedBy(auth()->user(),$tweet)){
