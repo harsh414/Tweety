@@ -6,19 +6,12 @@ namespace App;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 trait tweetActivity
 {
     public function likeOrDislike(Request $request)
     {
-        $auth_id=1;$tweet_id=1;
-        $ret = new retweet;
-        $ret->r_u_id = $auth_id;
-        $ret->retweet_id= $tweet_id;
-        $ret->save();
-
-
-
         $output='';
         $tweet_id = $request->get('t_id');
         $tweet = Tweet::find($tweet_id);
@@ -82,10 +75,9 @@ trait tweetActivity
         $tweet= Tweet::find($tweet_id);
         $output='';
         if(auth()->user()->hadRetweeted($tweet) == false){
-            $ret = new Retweet;
-            $ret->r_u_id = $auth_id;
-            $ret->retweet_id= $tweet_id;
-            $ret->save();
+            DB::insert("INSERT INTO retweets(
+            r_u_id, retweet_id)
+            VALUES ('$auth_id', '$tweet_id')");
         }else{
             $ret= Retweet::where('r_u_id',$auth_id)
                 ->where('retweet_id',$tweet_id);
