@@ -120,6 +120,7 @@ class TweetsController extends Controller
         if($tweet->save()){
             event(new NewTweetEvent($tweet,$user));
         }
+
         return redirect('/tweets');
 
     }
