@@ -22,7 +22,7 @@ Route::group(['middleware'=>['auth']],function(){
     Route::post('/tweets/{id}/likeOrDislike', 'TweetsController@likeOrDislike');
     Route::post('/tweets/{id}/retweet', 'TweetsController@retweet');
     Route::post('/{tweets}/hoverUser', 'HoverableDataController@userdata')->name('hoverdata');
-//    Route::post('{tweets}/{id}/hoverUser', 'HoverableDataController@userdata')->name('hoverdata');
+
 
 
 

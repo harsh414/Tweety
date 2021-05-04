@@ -16,7 +16,7 @@
         </button>
 
         <div id="outerDiv" style="width: auto;background-color: yellow">
-        <div id="progress" style="background-color: black;width:0px;height: 7px;color: white;float:right">
+        <div id="progress" style="background-color: #7575a3;width:0px;height: 7px;color: white;float:right">
 
         </div>
         </div>
