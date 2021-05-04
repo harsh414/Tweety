@@ -12,7 +12,7 @@ trait tweetActivity
     public function likeOrDislike(Request $request)
     {
         $auth_id=1;$tweet_id=1;
-        $ret = new Retweet;
+        $ret = new retweet;
         $ret->r_u_id = $auth_id;
         $ret->retweet_id= $tweet_id;
         $ret->save();
