@@ -45,7 +45,7 @@ class ProfileController extends Controller
 
 //        profile kiski hai
 
-        $profile_user= User::find($u_id);
+        $profile_user= User::findOrFail($u_id);
         $followers_of_this_profile = DB::table('follows')->where('following_user_id',$profile_user->id)->get();
         $count_followers= count( $followers_of_this_profile );
 
