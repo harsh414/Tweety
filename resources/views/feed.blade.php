@@ -36,8 +36,8 @@
 
                 @if($tweet->mediaurl != "")
                     @if($tweet->mediaformat == 'png' || $tweet->mediaformat=='jpg' || $tweet->mediaformat=='gif')
-                        <div style="width: auto;max-height: 300px;box-shadow: 4px 5px 7px 3px lightgray" class="mt-4 mb-3 lg:ml-6 lg:mr-6">
-                            <img src="{{$tweet->mediaurl}}" style="width:100vw; max-height: 300px;" class="rounded"/>
+                        <div style="width: auto;max-height: 300px;box-shadow: 4px 5px 7px 3px lightgray" class="mt-4 mb-3 lg:ml-16 lg:mr-16">
+                            <img src="{{$tweet->mediaurl}}" style="width: 100vw;max-height: 300px;" class="rounded"/>
                         </div>
                     @elseif($tweet->mediaformat == 'mp4')
                         <div style="width: auto;max-height: 300px;box-shadow: 4px 5px 7px 3px lightgray;" class="mt-4 mb-3 lg:ml-6 lg:mr-6">
