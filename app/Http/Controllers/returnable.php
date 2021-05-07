@@ -413,7 +413,7 @@ trait returnable
         $query= DB::select("SELECT * FROM
         likes JOIN tweets
         ON likes.user_id=$id AND tweets.id=likes.tweet_id
-        WHERE isliked=1;");
+        WHERE likes.isliked=true;");
 
         if(count($query)==0){
             $output.='
