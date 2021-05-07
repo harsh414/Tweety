@@ -14,7 +14,7 @@ trait tweetActivity
     {
         $output='';
         $tweet_id = $request->get('t_id');
-        $tweet = Tweet::find($tweet_id);
+        $tweet = Tweet::findOrFail($tweet_id);
         if($tweet->ifLikedBy(auth()->user(),$tweet)){
             $user= auth()->user();
             $tweet->dislike($user);
@@ -72,7 +72,7 @@ trait tweetActivity
     {
         $auth_id= Auth::id();
         $tweet_id = $request->get('t_id');
-        $tweet= Tweet::find($tweet_id);
+        $tweet= Tweet::findOrFail($tweet_id);
         $output='';
         if(auth()->user()->hadRetweeted($tweet) == false){
             DB::insert("INSERT INTO retweets(

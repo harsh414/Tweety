@@ -39,7 +39,7 @@ class TweetsController extends Controller
 
 //        ************testing
         foreach ($users_id as $id){
-            $userr= User::find($id);
+            $userr= User::findOrFail($id);
             $id_array= $userr->following->pluck('id');
             foreach ($id_array as $i){
                 array_push($global_array,$i);
@@ -70,7 +70,7 @@ class TweetsController extends Controller
             if (count($retweets_of_this_by_followers) != 0) {
 //                echo $tweet->id." ".count($retweets_of_this_by_followers)."<br>";
                 $r_u_idd = $retweets_of_this_by_followers[0]->r_u_id;
-                $user = User::find($r_u_idd);
+                $user = User::findOrFail($r_u_idd);
                 $name= $user->name;
                 $twodarray[$tweet->id]=$name;
             }
@@ -137,7 +137,7 @@ class TweetsController extends Controller
         $users_id= auth()->user()->following()->pluck('id'); // id of users i follow
 //        ************testing
         foreach ($users_id as $id){
-            $userr= User::find($id);
+            $userr= User::findOrFail($id);
             $id_array= $userr->following->pluck('id');
             foreach ($id_array as $i){
                 array_push($global_array,$i);
@@ -151,7 +151,7 @@ class TweetsController extends Controller
         $w_t_f= DB::table('users')->whereIn('id',$global_array)->
         whereNotIn('id',$users_id);
         $w_t_f= $w_t_f->inRandomOrder()->take('5')->get();
-        $tweet= Tweet::find($tid);
+        $tweet= Tweet::findOrFail($tid);
         return view('tweets/showTweet',[
             'who_to_follow'=>$w_t_f,
             'tweet'=>$tweet,

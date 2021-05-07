@@ -290,7 +290,7 @@ trait returnable
         $output = '';
         $id = $request->get('id');
 
-        $user = User::find($id);
+        $user = User::findOrFail($id);
         $tweets= $user->tweets()->where('mediaformat','!=','')->where('mediaurl','!=','')->get();
 
         if($tweets->count()==0){
@@ -310,7 +310,7 @@ trait returnable
         <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">
         <div class="flex p-2">
             <div class="flex-shrink-0 mr-2">';
-            $user_of_tweet= User::find($tweet->user_id);
+            $user_of_tweet= User::findOrFail($tweet->user_id);
             $output.='
             <img src="'.$user_of_tweet->url.'" alt="" class="rounded-full mr-2" style="height: 50px;width: 50px;">
             </div>
@@ -413,7 +413,7 @@ trait returnable
         $query= DB::select("SELECT * FROM
         likes JOIN tweets
         ON likes.user_id=$id AND tweets.id=likes.tweet_id
-        WHERE isLiked=1;");
+        WHERE isliked=1;");
 
         if(count($query)==0){
             $output.='
@@ -429,7 +429,7 @@ trait returnable
         }
         foreach ($query as $query) {
             $tweet_id= $query->tweet_id;
-            $tweet= Tweet::find($tweet_id);
+            $tweet= Tweet::findOrFail($tweet_id);
             $output .= '
         <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">';
             $output.='

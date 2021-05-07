@@ -28,7 +28,7 @@ class HomeController extends Controller
         $users_id= auth()->user()->following()->pluck('id'); //id of users i follow
 
         foreach ($users_id as $id){
-            $userr= User::find($id);
+            $userr= User::findOrFail($id);
             $id_array= $userr->following->pluck('id');
             foreach ($id_array as $i){
                 array_push($global_array,$i);

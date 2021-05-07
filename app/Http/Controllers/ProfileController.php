@@ -23,7 +23,7 @@ class ProfileController extends Controller
         $users_id= auth()->user()->following()->pluck('id'); //id of users i follow
 
         foreach ($users_id as $id){
-            $userr= User::find($id);
+            $userr= User::findOrFail($id);
             $id_array= $userr->following->pluck('id');
             foreach ($id_array as $i){
                 array_push($global_array,$i);
@@ -51,7 +51,7 @@ class ProfileController extends Controller
 
 
 
-        $status_user= User::find($u_id);
+        $status_user= User::findOrFail($u_id);
         $isFoll = auth()->user()->isFollowing($status_user);
         (bool)$isFoll == 'true' ? $status="Following" : $status="Follow";
         return view('profile.index',[
@@ -70,7 +70,7 @@ class ProfileController extends Controller
         $request->validate([
             'name'=>'required',
         ]);
-        $user= User::find($id);
+        $user= User::findOrFail($id);
         $name= $request->input('name');
         $bio= $request->input('bio');
 
@@ -92,7 +92,7 @@ class ProfileController extends Controller
 
     public function follow($url='',$id)
     {
-        $user= User::find($id);
+        $user= User::findOrFail($id);
         auth()->user()->follow($user);
         event(new FollowEvent(auth()->user(),$user)); // if a follow b than b will
         // receive notificaion that a followed him
@@ -101,7 +101,7 @@ class ProfileController extends Controller
 
     public function unfollow($url='',$id)
     {
-        $user= User::find($id);
+        $user= User::findOrFail($id);
         auth()->user()->unfollow($user);
         return back();
     }

@@ -13,7 +13,7 @@ class HoverableDataController extends Controller
     {
         $output="";
         $u_id= $request->get('id');
-        $user= User::find($u_id);
+        $user= User::findOrFail($u_id);
         if(auth()->user()->isFollowing($user)){
             $s1="Unfollow";
             $s2="Following";
