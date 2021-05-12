@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">
+    <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3" style="word-break: break-word">
         <div class="flex p-2">
             <div class="flex-shrink-0 mr-2">
                 <a href="{{route('profile',$tweet->user_id)}}"><img src="{{$tweet->user->url}}" style="height: 50px;width: 50px;" alt="" class="rounded-full mr-2"></a>
