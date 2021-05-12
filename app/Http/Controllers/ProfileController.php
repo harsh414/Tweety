@@ -6,6 +6,7 @@ use App\Events\FollowEvent;
 use App\Tweet;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -111,6 +112,7 @@ class ProfileController extends Controller
         if($request->ajax())
         {
             $query= $request->get('query');
+            $auth_user= Auth::user();
             if($query!=''){
                 $users= User::where('name','like','%'.$query.'%')
                                 ->orWhere('email','like','%'.$query.'%')
@@ -121,6 +123,8 @@ class ProfileController extends Controller
 
             $output='';
             foreach ($users as $u) {
+                if($u==$auth_user)
+                    continue;
                 $output .='
             <div class="text-center flex justify-content-around mt-6 lg:border shadow-inner p-4">
             <img src="' . $u->url . '" alt="" class="shadow pr-1 rounded-full lg:ml-2"

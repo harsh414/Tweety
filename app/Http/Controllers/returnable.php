@@ -24,7 +24,7 @@ trait returnable
 
         if($tweets->count()==0){
             $output.='
-            <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">
+            <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3" style="word-break: break-word">
             <span class="font-bold text-center">No Recent Tweets...</span>
             <div class="mt-2.5 font-bold text-2xl">Who to follow</div>
             <a href="'.route('getstarted').'">
@@ -36,7 +36,7 @@ trait returnable
         }
         foreach ($tweets as $tweet) {
         $output .= '
-        <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">';
+        <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3" style="word-break: break-word">';
 
             $output.='<div class="flex p-2">
                 <div class="flex-shrink-0 mr-2">';
@@ -152,7 +152,7 @@ trait returnable
 
         if($retweets->count()==0){
             $output.='
-            <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">
+            <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3" style="word-break: break-word">
             <span class="font-bold text-center">No Recent ReTweets...</span>
             <div class="mt-2.5 font-bold text-2xl">Who to follow</div>
             <button type="submit" class="bg-blue-400 shadow rounded-lg px-4 py-2 mt-2 text-white lg:mr-1" style="width: 30vw;">
@@ -164,7 +164,7 @@ trait returnable
         }
         foreach ($retweets as $tweet) {
             $output .='
-        <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">';
+        <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3" style="word-break: break-word">';
             if($user==auth()->user()){
                 $output.='
                 <div class="flex mb-3">
@@ -295,7 +295,7 @@ trait returnable
 
         if($tweets->count()==0){
             $output.='
-            <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">
+            <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3" style="word-break: break-word">
             <span class="font-bold text-center">Nothing here to display</span>
             <div class="mt-2.5 font-bold text-2xl">Who to follow</div>
             <a href="'.route('getstarted').'">
@@ -307,7 +307,7 @@ trait returnable
         }
         foreach ($tweets as $tweet) {
             $output .= '
-        <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">
+        <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3" style="word-break: break-word">
         <div class="flex p-2">
             <div class="flex-shrink-0 mr-2">';
             $user_of_tweet= User::findOrFail($tweet->user_id);
@@ -417,7 +417,7 @@ trait returnable
 
         if(count($query)==0){
             $output.='
-            <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">
+            <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3" style="word-break: break-word">
             <span class="font-bold text-center">No Recent Likes...</span>
             <div class="mt-2.5 font-bold text-2xl">Who to follow</div>
             <a href="'.route('getstarted').'">
@@ -431,7 +431,7 @@ trait returnable
             $tweet_id= $query->tweet_id;
             $tweet= Tweet::findOrFail($tweet_id);
             $output .= '
-        <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3">';
+        <div class="rounded-lg border border-gray-300 shadow py-4 px-8 mt-3" style="word-break: break-word">';
             $output.='
         <div class="flex p-2">
             <div class="flex-shrink-0 mr-2">

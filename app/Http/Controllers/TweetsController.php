@@ -20,7 +20,8 @@ class TweetsController extends Controller
     public function getstarted()
     {
         $num_users= User::all();
-        $users= User::inRandomOrder()->paginate('8');
+        $id_of_auth_user= Auth::id();
+        $users= User::where('id','!=',$id_of_auth_user)->inRandomOrder()->paginate('8');
         return view('getstarted',[
             'users'=>$users,
         ]);
