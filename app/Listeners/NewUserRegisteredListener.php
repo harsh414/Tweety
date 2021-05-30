@@ -16,7 +16,7 @@ class NewUserRegisteredListener
     {
        //  yha pe add hoga kisko notify karna hai
         // we want to notify new registered user that registration is successfull
-        $user= User::where('id','=',$event->user->id)->get();
+        $user= User::find($event->user->id);
         Notification::send($user,new NewRegistrationNotification($event->user));
     }
 }
