@@ -49,7 +49,9 @@ border-right-color: white; border-bottom-color: white " data-toggle="modal" data
     </form>
     @endif
 </div>
+@if($profile->bio != '')
 <div class="mb-2">{{$profile->bio}}</div>
+@endif
 
 <div class="flex gap-2">
     <img src="{{asset('images/calendar.png')}}" style="height: 20px; width: 20px" alt="">
