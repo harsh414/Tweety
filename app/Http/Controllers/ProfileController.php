@@ -167,7 +167,9 @@ class ProfileController extends Controller
          </div>
             ';
             }
-
+            if($output==''){
+                $output="<div class='mt-4 ml-1' style='font-size:18px'>No users matches with the search..</div>";
+            }
 
             $num_rows= $users->count();
             $data= array(
